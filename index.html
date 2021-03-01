@@ -14,14 +14,16 @@
 </head>
 
 <body>
-    <div class="header">
-    <h1>Weather Dashboard</h1>
-    </div>
+    <header class="jumbotron jumbotron-fluid custom-jumbotron">
+        <div class="container text-center">
+            <h1>Weather Dashboard</h1>
+        </div>
+    </header>
     <div class="col-12 col-md-3 bg-light p-3">
         <h1 class="text-primary">Search for a City:</h1>
-        <div class="row search-form">
+        <div class="search-container">
             <form id="search-input" class="mb-2">
-                <input id="search-input" class="form-input w-80" type="text">
+                <input class="search-input" type="text" placeholder="Search">
                 <button class="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
