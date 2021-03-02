@@ -8,13 +8,13 @@
     position: relative;
     display: flex;
 }
-.searchBtn {
+#searchBtn {
     float: right;
     height: 30px;
     background-color: #06AED5;
     color: white;
     width: 40px;
   }
-  .searchBtn i:hover {
+  #searchBtn i:hover {
     border-color: cornflowerblue;
   }
