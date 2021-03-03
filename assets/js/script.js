@@ -1,7 +1,7 @@
-// var fetchButton = document.getElementById('searchBtn');
-
+var fetchButton = document.getElementById('searchBtn');
+var searchInput = document.querySelector('.search-input');
 // function getApi() {
-//     var requestUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=54eeff228a31b67218a1e00174849d19={API key}';
+//     var requestUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=54eeff228a31b67218a1e00174849d19';
 
 //     fetch(requestUrl)
 //         .then(function (response) {
@@ -15,8 +15,11 @@
 //             }
 //         });
 // }
-// fetchButton.addEventListener('click', getApi);
+console.log(fetchButton)
+fetchButton.addEventListener('click', function(event){
+    event.preventDefault()
+    fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=54eeff228a31b67218a1e00174849d19')
+    .then(response => response.json())
+    .then(data => console.log(data));
+});
 
-fetch('https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={54eeff228a31b67218a1e00174849d19}')
-.then(response => response.json())
-.then(data => console.log(data));
