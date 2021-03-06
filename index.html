@@ -19,17 +19,30 @@
             <h1>Weather Dashboard</h1>
         </div>
     </header>
-    <div class="col-12 col-md-3 bg-light p-3">
+    <div class="col-12 col-md-3">
         <h1 class="text-primary">Search for a City:</h1>
         <div class="search-container">
-            <form id="search-input" class="mb-2">
-                <input id="search-input" type="text" placeholder="Search">
-                <button id="searchBtn">
-                    <i class="fas fa-search"></i>
-                </button>
-                <br>
-                <div id="city-searches"></div>
-            </form>
+            <div search-box="1" class="search-count">
+                <form id="search-input" class="mb-2">
+                    <input class="inputValue" type="text" placeholder="Search">
+                    <button class="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <ul id="city-search"></ul>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="display">
+                <h1 class="name"></h1>
+                <p class="date"></p>
+                <p class="weather-conditions"></p>
+                <p class="temp"></p>
+                <p class="humidity"></p>
+                <p class="wind-speed"></p>
+                <p class="uv-index"></p>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
