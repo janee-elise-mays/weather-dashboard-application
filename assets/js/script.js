@@ -14,8 +14,12 @@ button.addEventListener('click', function () {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + inputValue.value + '&cnt=5&units=imperial&appid=54eeff228a31b67218a1e00174849d19')
         .then(response => response.json())
         .then(data => {
+
+            // unable to display items with labels
+            // commented lines returned undefined items
+
             var nameValue = data['city']['name'];
-            // var weatherValue = data['list']['0']['weather']['0']['description'];
+            // var weatherValue = data['list']['0']['weather']['description'];
             var tempValue = data['list']['0']['main']['temp'];
             var humidityValue = data['list']['0']['main']['humidity'];
             // var windValue = data['list']['0']['wind']['speed'];
@@ -28,15 +32,6 @@ button.addEventListener('click', function () {
         })
 });
 
-// button.addEventListener('click',function () {
-//     inputValue = inputCity.val()
-//     history.push(inputCity);
-//     localStorage.setItem('inputCity', JSON.stringify(history));
-//     buildContent();
-
-//     // var = [" "]
-// });
-
 let userSearch;
 let cityList;
 
@@ -48,10 +43,12 @@ button.addEventListener('click', function () {
     itemArr.push(userSearch);
     localStorage.setItem('inputValue', JSON.stringify(itemArr));
     itemArr.forEach(search => {
+        // pulls HTML object rather than city name
         cityList = document.createElement('div');
         citySearch.appendChild(cityList);
         let cityText = document.createElement('p');
-        cityText.innerHTML=citySearch;
+        //  tried to access local storage to retrieve city names from array
+        cityText.innerHTML=localStorage.getItem('nameValue');
         cityList.className="city-list";
         cityList.appendChild(cityText);
         button.addEventListener('click', function () {
@@ -59,6 +56,7 @@ button.addEventListener('click', function () {
         })
     })
 });
+// trying to clear input "search item"
 button.addEventListener('click', function() {
     inputValue.innerHTML = '';
 });
